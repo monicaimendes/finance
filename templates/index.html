@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Current Price</th>
+                <th>Total</th>
+                <th>Cash Available</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in user_info %}
+                <tr>
+                    <td>{{ info.symbol }}</td>
+                    <td>{{ info.shares }}</td>
+                    <td>{{ info.current_price }}</td>
+                    <td>{{ info.total }}</td>
+                </tr>
+            {% endfor %}
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ cash }}</td>
+            <td>{{ grand_total }}</td>
+        </tbody>
+    </table>
+{% endblock %}
